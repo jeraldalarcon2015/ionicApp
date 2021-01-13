@@ -16,7 +16,7 @@
       button 
       [routerLink]="['/idea',idea.id]"
       *ngFor="let idea of (ideas | async)">
-      {{ idea.name }}
+      {{ idea.name }} and this is my Notes: {{idea.notes}}
     </ion-item>
 
   </ion-list>

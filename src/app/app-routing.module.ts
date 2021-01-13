@@ -13,22 +13,22 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./pages/idea-list/idea-list.module').then( m => m.IdeaListPageModule),
     // ...canActivate(redirectLoggedIntoChat)
-    ...canActivate(redirectUnauthorizedToLogin)
+    // ...canActivate(redirectUnauthorizedToLogin)
   },
   {
     path:'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
-    ...canActivate(redirectUnauthorizedToLogin)
+    // ...canActivate(redirectUnauthorizedToLogin)
   },
   {
     path: 'idea',
     loadChildren: () => import('./pages/idea-details/idea-details.module').then( m => m.IdeaDetailsPageModule),
-    ...canActivate(redirectUnauthorizedToLogin)
+    // ...canActivate(redirectUnauthorizedToLogin)
   },
   {
     path: 'idea/:id',
     loadChildren: () => import('./pages/idea-details/idea-details.module').then( m => m.IdeaDetailsPageModule),
-    ...canActivate(redirectUnauthorizedToLogin)
+    // ...canActivate(redirectUnauthorizedToLogin)
   },
   {
     path: 'login',

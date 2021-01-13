@@ -4,6 +4,7 @@ import { map, take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 export interface Idea {
+  
   id?: string,
   name: string,
   notes: string
@@ -39,7 +40,7 @@ export class IdeaService {
 
   getIdea(id: string): Observable<Idea> {
     return this.ideaCollection.doc<Idea>(id).valueChanges().pipe(
-      take(1),
+      // take(1),
       map(idea => {
         idea.id = id;
         return idea
