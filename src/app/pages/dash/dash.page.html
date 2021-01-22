@@ -1,0 +1,96 @@
+<ion-header  class="ion-no-border">
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-icon name="sunny-outline" slot="start"></ion-icon>
+      <ion-thumbnail slot="end">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-thumbnail>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-grid>
+              <ion-row>
+                <ion-col><ion-label>{{today | date}}</ion-label></ion-col>
+               </ion-row>
+               <ion-row>
+                <ion-col><ion-label class="today-style">TODAY</ion-label></ion-col>
+               </ion-row>
+            </ion-grid>
+            <ion-row></ion-row>
+          </ion-col>
+          <ion-col class="ion-align-self-end">
+            <div style="text-align: end">
+              <ion-button color="warning">
+                <ion-icon slot="start" name="star"></ion-icon>
+                ADD TASK
+              </ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-card>
+  <ion-card class="container-flex ">
+    <ion-card class="flex-1"><h1>Three</h1></ion-card>
+    <ion-card class="flex-1">
+      <h1>Two</h1>
+    </ion-card>
+    <ion-card class="flex-1"><h1>Three</h1></ion-card>
+    <ion-card class="flex-1"><h1>Four</h1></ion-card>
+    <ion-card class="flex-1"><h1>Five</h1></ion-card>
+    <ion-card class="flex-1"><h1>Three</h1></ion-card>
+    <ion-card class="flex-1"><h1>Four</h1></ion-card>
+    <ion-card class="flex-1"><h1>Five</h1></ion-card>
+    
+  </ion-card>
+
+  <ion-card>
+    <ion-slides pager="true" [options]="slideOpts" slidesPerView="3" spaceBetween="1" scrollbar=true>
+      <ion-slide>
+        <h1>Slide 1</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 2</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 3</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 4</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 5</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 6</h1>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+  <ion-card>
+    <ion-datetime 
+    placeholder="dd/mm/yy" 
+    displayFormat="DD/MM/YYYY" 
+    class="ion-input"
+    [ngModel]="fromDate"
+    (ngModelChange)="fromDateChanged($event)"> {{date | date:'yyyy-MM-dd'}}</ion-datetime>
+<ion-datetime 
+    placeholder="dd/mm/yy" 
+    displayFormat="DD/MM/YYYY" 
+    class="ion-input"
+    [ngModel]="toDate"
+    (ngModelChange)="toDateChanged($event)"> {{date | date:'yyyy-MM-dd'}}</ion-datetime>
+<div *ngFor="date of datesForCards">
+    <div>{{date | date:'yyyy-MM-dd'}}</div>
+</div>
+  </ion-card>
+  
+</ion-content>
+

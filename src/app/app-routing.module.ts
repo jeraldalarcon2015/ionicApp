@@ -10,7 +10,7 @@ const redirectLoggedIntoChat = () => redirectLoggedInTo(['/idea']);
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'ideaList',
     loadChildren: () => import('./pages/idea-list/idea-list.module').then( m => m.IdeaListPageModule),
     // ...canActivate(redirectLoggedIntoChat)
     ...canActivate(redirectUnauthorizedToLogin)
@@ -42,6 +42,15 @@ const routes: Routes = [
     path: 'chat',
     loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
   },
+  {
+    path: '',
+    loadChildren: () => import('./pages/dash/dash.module').then( m => m.DashPageModule)
+  },
+
+  // {
+  //   path: 'dashboard',
+  //   loadChildren: () => import('./pages/dashboard.module').then(m => m.DashboardPageModule)
+  // }
 
 ];
 
